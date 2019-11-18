@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+
+    /* Added a border to the bottom of the nav */
+    border-bottom: 5px solid #702222;
+}
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {background-color: #555;}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+/* Change background color of navigation on selected page */
+/* ul.topnav li a:active {
+  background-color: #ccc;
+  color:#000;
+} */
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+   }
+
+   .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+
+
+@media screen and (max-width:680px) {
+ 
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #f2f2f2;
+  display: block;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+  color: #f2f2f2;
+ 
+}
+
+.show {
+  display: block; 
+  color: #f2f2f2;
+}
+
